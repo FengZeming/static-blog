@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import canvasAnimate from './lib/canvasAnimate';
 import './App.css';
 
 class App extends Component {
+
+  componentDidMount() {
+    canvasAnimate('indexAnimate');
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div id="app">
+        <canvas id="indexAnimate"></canvas>
+        <div id="app-info">
+          <p>A Little Site For Recording.</p>
+          <p>This site is under development.</p>
+          <p>Go to <a href="https://github.com/GitHubThRee/blog">repo</a> for more information.</p>
+        </div>
       </div>
     );
   }
