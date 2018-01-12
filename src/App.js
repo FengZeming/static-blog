@@ -1,23 +1,32 @@
 import React, { Component } from 'react';
-import canvasAnimate from './lib/canvasAnimate';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 import './App.css';
+import styled from 'styled-components';
+import Header from './components/Header';
+import Banner from './components/Banner';
+import Index from './components/Index';
+import About from './components/About';
+
+const StyledAppRoot = styled.div`
+  margin-top: 90px;
+`
 
 class App extends Component {
 
-  componentDidMount() {
-    canvasAnimate('indexAnimate');
-  }
-
   render() {
     return (
-      <div id="app">
-        <canvas id="indexAnimate"></canvas>
-        <div id="app-info">
-          <p>A Little Site For Recording.</p>
-          <p>This site is under development.</p>
-          <p>Go to <a href="https://github.com/GitHubThRee/blog">repo</a> for more information.</p>
-        </div>
-      </div>
+      <Router>
+        <StyledAppRoot>
+          <Header></Header>
+          <Banner></Banner>
+          <Route exact path="/" component={Index}/>
+          <Route path="/about" component={About}/>
+        </StyledAppRoot>
+      </Router>
     );
   }
 }
