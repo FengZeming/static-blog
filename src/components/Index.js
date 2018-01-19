@@ -31,7 +31,7 @@ class Index extends Component {
 
   componentWillMount() {
     let _this = this;
-    axios.get('/posts/lists.json')
+    axios.get('/static/posts/lists.json')
       .then(function (response) {
         if (response.data && response.data instanceof Array) {
           _this.setState({
@@ -85,7 +85,7 @@ class ShortPost extends Component {
 
   componentWillMount() {
     let _this = this;
-    axios.get(`/posts/${_this.props.data.file}`)
+    axios.get(`/static/posts/${_this.props.data.file}`)
       .then(function (response) {
         if (response.data && typeof (response.data) === 'string') {
           let moreIndex = response.data.indexOf('<!--more-->'),

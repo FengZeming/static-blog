@@ -5,7 +5,7 @@ const rimraf = require('rimraf');
 const path = require('path');
 
 const postDir = path.resolve('./posts');
-const postOutputDir = path.resolve('./public/posts');
+const postOutputDir = path.resolve('./public/static/posts');
 const postList = [];
 const postsCategory = {};
 const postsCategoryList = [];
@@ -41,19 +41,6 @@ fs.readdir(postDir).then(function (list) {
       postsCategory[data.attributes.category].push(afterData)
     });
 
-    if (fs.existsSync(postOutputDir)) {
-      rimraf(postOutputDir, error => {
-        if (!error) {
-          fs.mkdirSync(postOutputDir)
-          writeFile();
-        }
-      })
-
-    } else {
-      fs.mkdirSync(postOutputDir)
-      writeFile();
-    }
-
     let writeFile = () => {
       Promise.all(postList.map(data => {
         // posts
@@ -66,14 +53,36 @@ fs.readdir(postDir).then(function (list) {
               reject(err)
             }
           })
+        }).catch(err => {
+          console.log(err)
         })
       })).then(() => {
         // lists
         fs.writeFile(path.join(postOutputDir, 'lists.json'), JSON.stringify(postList))
         // categories
         fs.writeFile(path.join(postOutputDir, 'categoties.json'), JSON.stringify(postsCategory))
+      }).catch(err => {
+        console.log(err)
       })
     };
 
+    // delete old posts
+    (() => {
+      if (!fs.existsSync(path.resolve('./public/static'))) {
+        fs.mkdirSync(path.resolve('./public/static'))
+      }
+
+      if (!fs.existsSync(postOutputDir)) {
+        fs.mkdirSync(postOutputDir);
+        writeFile();
+      }else{
+        rimraf(postOutputDir, error => {
+          if (!error) {
+            fs.mkdirSync(postOutputDir);
+            writeFile();
+          }
+        })
+      }
+    })()
   });
 })
