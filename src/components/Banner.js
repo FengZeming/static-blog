@@ -7,9 +7,7 @@ const StyledBanner = styled.div`
   background: lightblue;
   top: 0px;
 `
-// http://cherryblog.site/canvas-star.html - canvas的一篇文章
 class Banner extends Component {
-
   render() {
     return (
       <StyledBanner>

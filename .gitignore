@@ -8,6 +8,7 @@
 
 # production
 /build
+/public/posts/*
 
 # misc
 .DS_Store
