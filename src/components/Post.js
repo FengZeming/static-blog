@@ -29,7 +29,7 @@ class Post extends Component {
 
   componentWillMount() {
     let _this = this;
-    axios.get('/posts/lists.json')
+    axios.get('/static/posts/lists.json')
       .then(function (response) {
         if (response.data && response.data instanceof Array) {
           let filteredList = response.data.filter( post => {
@@ -40,7 +40,7 @@ class Post extends Component {
             _this.setState({
               title: postData.title
             });
-            axios.get(`/posts/${postData.file}`)
+            axios.get(`/static/posts/${postData.file}`)
               .then(function (response) {
                 if (response.data && typeof (response.data) === 'string') {
                   let moreIndex = response.data.indexOf('<!--more-->'),
