@@ -15,7 +15,7 @@ fs.readdir(postDir).then(function (list) {
     return new Promise(function (resolve, reject) {
       let filePath = path.join(postDir, fileName);
       fs.readFile(filePath, 'utf-8').then(function (fileContent) {
-        let postData = fm(fileContent)
+        let postData = fm(fileContent);
         postData.file = fileName;
         resolve(postData)
       });

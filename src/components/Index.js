@@ -110,7 +110,13 @@ class ShortPost extends Component {
             <Link className="my-href big-href" style={{ color: '#34495e' }} to={`/post/${new Date(this.props.data.date).getTime()}`}>{this.props.data.title}</Link>
           </h2>
         </header>
-        <TimeP>{new Date(this.props.data.date).toLocaleString()}</TimeP>
+        <TimeP>{
+          new Date(this.props.data.date).getUTCFullYear() + '年'
+          + (new Date(this.props.data.date).getUTCMonth()+1) + '月'
+          + new Date(this.props.data.date).getUTCDate() + '日 '
+          + new Date(this.props.data.date).getUTCHours() + ':'
+          + new Date(this.props.data.date).getUTCMinutes()
+          }</TimeP>
         <div dangerouslySetInnerHTML={{ __html: this.state.content }}></div>
         <footer>
           <Link className="my-href" style={{ fontSize: '15px', color: '#42b983' }} to={`/post/${new Date(this.props.data.date).getTime()}`}>阅读全文</Link>

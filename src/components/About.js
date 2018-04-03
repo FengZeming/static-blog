@@ -10,6 +10,7 @@ class About extends Component {
           <p>
             <ul>
               <li>喻思睿，一个热爱学习的Coder</li>
+              <li>GitHub: [https://github.com/GitHubThRee](https://github.com/GitHubThRee)</li>
               <li>博客由React + React Router构建</li>
             </ul>
           </p>
