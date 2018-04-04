@@ -7,13 +7,12 @@ class About extends Component {
       <Wrapper className="markdown-body">
         <article>
           <h2 style={{color: '#34495e'}}>关于我</h2>
-          <p>
+          <div>
             <ul>
               <li>喻思睿，一个热爱学习的Coder</li>
-              <li>GitHub: [https://github.com/GitHubThRee](https://github.com/GitHubThRee)</li>
-              <li>博客由React + React Router构建</li>
+              <li>GitHub: <a href="https://github.com/GitHubThRee" rel="noopener noreferrer" target="_blank">https://github.com/GitHubThRee</a></li>
             </ul>
-          </p>
+          </div>
         </article>
         
       </Wrapper>
