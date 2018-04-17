@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
+import React, { Component } from 'react'
+import styled from 'styled-components'
 
 const StyledFooter = styled.footer`
   height: 60px;
@@ -17,15 +17,15 @@ const IineWrapper = styled.div`
 `
 
 class Footer extends Component {
-  render() {
+  render () {
     return (
       <StyledFooter style={{textAlign: 'center'}}>
         <IineWrapper>
           Powered by React + React Router.
         </IineWrapper>
       </StyledFooter>
-    );
+    )
   }
 }
 
-export default Footer;
+export default Footer
