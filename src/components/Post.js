@@ -30,7 +30,7 @@ class Post extends Component {
 
   initGitComment (id) {
     const gitment = new Gitment({
-      id,
+      id: `${id}`,
       owner: 'GitHubThRee',
       repo: 'GitHubThRee.github.io',
       oauth: {
