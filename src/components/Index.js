@@ -34,7 +34,7 @@ class Index extends Component {
       .then(function (response) {
         if (response.data && response.data instanceof Array) {
           _this.setState({
-            lists: response.data.slice(0, 1)
+            lists: response.data.slice(0, 5)
           })
         }
       })
