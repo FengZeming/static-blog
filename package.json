@@ -19,10 +19,10 @@
   },
   "scripts": {
     "start": "node init.js && react-scripts start",
-    "build": "node init.js && react-scripts build && rm -rf docs && mv build docs",
+    "build": "PUBLIC_URL= node init.js && react-scripts build && rm -rf docs && mv build docs",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "init": "node init.js"
   },
-  "homepage": "http://yusirui.site"
+  "homepage": "https://ghthree.github.io/static-blog/"
 }
