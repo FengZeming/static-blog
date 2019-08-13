@@ -16,25 +16,3 @@ And your blog content goes here...
 3. Run `npm run init` to init posts info
 4. Run `npm run build` to build app
 5. Deploy 'root/build' directory to your github pages repository
-
-## Comment system
-
-More detail can be seen in repo [gitment: A comment system based on GitHub Issues](https://imsun.github.io/gitment/)
-
-To use it, modify method `initGitComment` in `./src/components/Post.js`:
-
-```javascript
-initGitComment (id) {
-  const gitment = new Gitment({
-    id: 'Your page ID', // optional
-    owner: 'Your GitHub ID',
-    repo: 'The repo to store comments',
-    oauth: {
-      client_id: 'Your client ID',
-      client_secret: 'Your client secret'
-    }
-  })
-
-  gitment.render(this.refs.gitcomment)
-}
-```
