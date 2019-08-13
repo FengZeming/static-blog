@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {
   Link
 } from 'react-router-dom'
-import axios from 'axios'
+import axios from '../axios'
 import MarkdownIt from 'markdown-it'
 import hljs from 'highlight.js'
 import styled from 'styled-components'

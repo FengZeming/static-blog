@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+import axios from '../axios'
 import MarkdownIt from 'markdown-it'
 import hljs from 'highlight.js'
 import 'gitment/style/default.css'
