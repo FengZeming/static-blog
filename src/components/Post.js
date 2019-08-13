@@ -65,7 +65,6 @@ class Post extends Component {
                   let contentStr = response.data
                   if (moreIndex !== -1) contentStr = contentStr.replace('<!--more-->', '')
                   let markdownedHtml = md.render(contentStr)
-                  console.log('markdownedHtml', markdownedHtml)
                   _this.setState({
                     content: markdownedHtml
                   })
