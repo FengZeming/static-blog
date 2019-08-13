@@ -7,6 +7,7 @@ import Gitment from 'gitment'
 import { Wrapper } from './CommonComponents'
 
 const md = new MarkdownIt({
+  html: true,
   highlight: function (str, lang) {
     if (lang && hljs.getLanguage(lang)) {
       try {
@@ -62,6 +63,7 @@ class Post extends Component {
                   let contentStr = response.data
                   if (moreIndex !== -1) contentStr = contentStr.replace('<!--more-->', '')
                   let markdownedHtml = md.render(contentStr)
+                  console.log('markdownedHtml', markdownedHtml)
                   _this.setState({
                     content: markdownedHtml
                   })

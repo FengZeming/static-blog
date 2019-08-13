@@ -29,10 +29,6 @@ class Header extends Component {
           <IineWrapper>
             <Link className='my-href big-href' style={{fontSize: '22px', fontWeight: '400'}} to='/'>Site No.3</Link>
           </IineWrapper>
-
-          <IineWrapper style={{float: 'right'}}>
-            <Link className='my-href big-href' style={{fontWeight: '600'}} to='/about'>关于我</Link>
-          </IineWrapper>
           <IineWrapper style={{float: 'right'}}>
             <Link className='my-href big-href' style={{fontWeight: '600'}} to='/list'>文章列表</Link>
           </IineWrapper>

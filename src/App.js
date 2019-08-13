@@ -8,7 +8,6 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Index from './components/Index'
 import Post from './components/Post'
-import About from './components/About'
 import List from './components/List'
 
 const StyledAppRoot = styled.div`
@@ -23,7 +22,6 @@ class App extends Component {
           <Header />
           <Route exact path='/' component={Index} />
           <Route path='/list' component={List} />
-          <Route path='/about' component={About} />
           <Route path='/post/:id' component={Post} />
           <Footer />
         </StyledAppRoot>
