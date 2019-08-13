@@ -3,6 +3,7 @@ import {
   Link
 } from 'react-router-dom'
 import axios from '../axios'
+import { processMarkdownImgEnv } from '../util'
 import MarkdownIt from 'markdown-it'
 import hljs from 'highlight.js'
 import styled from 'styled-components'
@@ -85,6 +86,7 @@ class ShortPost extends Component {
     axios.get(`/static/posts/${_this.props.data.file}`)
       .then(function (response) {
         if (response.data && typeof (response.data) === 'string') {
+          response.data = processMarkdownImgEnv(response.data)
           let moreIndex = response.data.indexOf('<!--more-->')
           let contentStr = response.data
           if (moreIndex !== -1) contentStr = contentStr.substr(0, moreIndex)

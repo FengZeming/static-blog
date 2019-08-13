@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from '../axios'
+import { processMarkdownImgEnv } from '../util'
 import MarkdownIt from 'markdown-it'
 import hljs from 'highlight.js'
 import 'gitment/style/default.css'
@@ -59,6 +60,7 @@ class Post extends Component {
             axios.get(`/static/posts/${postData.file}`)
               .then(function (response) {
                 if (response.data && typeof (response.data) === 'string') {
+                  response.data = processMarkdownImgEnv(response.data)
                   let moreIndex = response.data.indexOf('<!--more-->')
                   let contentStr = response.data
                   if (moreIndex !== -1) contentStr = contentStr.replace('<!--more-->', '')
