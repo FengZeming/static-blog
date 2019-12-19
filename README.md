@@ -15,4 +15,4 @@ And your blog content goes here...
 ```
 3. Run `npm run init` to init posts info
 4. Run `npm run build` to build app
-5. Set Master branch /docs directory as GitHub Pages source
+5. Set Master branch /docs folder as GitHub Pages source
